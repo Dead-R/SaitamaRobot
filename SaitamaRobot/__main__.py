@@ -52,14 +52,14 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am an Anime themed group management bot.
-Build by weebs for weebs, I specialize in managing anime and similar themed groups.
+I am an Anime themed group management bot which will help you in managing your groups .
+
 You can find my list of available commands with /help.
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a Hero For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
+I'm Test bot ! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
@@ -200,27 +200,22 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Saitama to your group",
+                            text="☑️ Add me to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
                      [
                          InlineKeyboardButton(
-                             text="🚑 Support Group",
-                             url=f"https://t.me/{SUPPORT_CHAT}"),
+                             text="🏡 Support Group",
+                             url=f"https://t.me/{Support_Chat}"),
                          InlineKeyboardButton(
-                             text="🔔 Updates Channel",
+                             text="🔔 Channel",
                              url="https://t.me/OnePunchUpdates")
-                     ],
+                   ],
                      [
                          InlineKeyboardButton(
-                             text="🧾 Getting started guide",
-                             url="https://t.me/OnePunchUpdates/29")
-                     ],
-                     [
-                         InlineKeyboardButton(
-                             text="🗄 Source code",
-                             url="https://github.com/AnimeKaizoku/SaitamaRobot")
+                             text="🔥 Creator",
+                             url=f"https://t.me/{@Monster_yo}") 
                      ]]))
     else:
         update.effective_message.reply_text(
@@ -333,10 +328,10 @@ def get_help(update: Update, context: CallbackContext):
                 ]]))
             return
         update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+            "Hey there! Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    text="Help",
+                    text="Go to PM",
                     url="t.me/{}?start=help".format(context.bot.username))
             ]]))
         return
